@@ -1,0 +1,42 @@
+
+  <!-- FlagIcon CSS CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+
+<meta charset="UTF-8">
+  <!-- Other head content -->
+
+<div>
+  <table class="golf-table">
+    <thead>
+      <tr>
+        <th class="golf-mstid-header">MSTID</th>
+        <th class="golf-match-header">Match</th>
+        <th class="golf-name-header">Name</th>
+        <th class="golf-nationality-header">Nationality</th>
+        <th class="golf-score-header">Score</th>
+        <th class="golf-today-header">Today</th>
+        <th class="golf-total-strokes-header">Total Strokes</th>
+        <th class="golf-total-stp-header">Total STP</th>
+        <th class="golf-tee-time-header">Tee Time</th>
+        <th class="golf-position-header">Position</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of messages"  >
+        <td>{{ data.MSTID }}</td>
+        <td>{{ data.Match }}</td>
+        <td>{{ data.First }} {{ data.Last }}</td>
+        <td>
+          <span class="flag-icon flag-icon-{{  getFlag(data.Nationality) }}"></span> {{ data.Nationality }}
+        </td>
+        
+        <td>{{ data.Score }}</td>
+        <td>{{ data.Today }}</td>
+        <td>{{ data.TotalStrokes }}</td>
+        <td>{{ data.TotalSTP }}</td>
+        <td>{{ data.teeTime }}</td>
+        <td>{{ data.position }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
